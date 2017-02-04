@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cerberus</title>
+	 <!-- bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- font-awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
+	
+</head>
+<body style="background-color: lightgray" class="container">
+<div class="alert alert-success">
+   You have been Loogged Out <strong>Successfully!</strong>.
+</div>
+<hr>
+<h3 style="color: indigo; text-align: center;"> Want  To login again?....... Click Login again</h3><br>
+<div style="text-align: center;">
+	<a class="btn btn-primary" href="{% url 'listings:login' %}" >Login</a>
+	<a class="btn btn-primary" href="/home" >Home</a>	
+</div>
+
+</body>
+</html>

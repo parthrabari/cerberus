@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cerberus</title>
+	 <!-- bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- font-awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
+	
+</head>
+<body style="background-color: lightgray" class="container">
+<div class="panel panel-default">
+	<div class="panel-body">
+	
+		<form class="form-horizontal " action="" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+				{% for f in form %}
+					<div class="form=group">
+						<span class="text-danger small">
+							{{f.errors}}
+						</span>
+					</div>
+					<label class="control-label col sm-2">
+						{{f.label_tag}}
+					</label>
+					<div class="col sm-10">{{f}}</div>
+
+				{% endfor%}
+				<div class="form=group">
+						<div class="col sm-offset-2 col sm-10">
+							<button type="submit" class="btn btn-success "> Submit</button>
+						</div>
+				</div>
+				<div style="text-align: center;">
+					<a class="btn btn-primary" href="/home" >Home</a>
+					
+				</div>
+		</form>
+	</div>
+</div>
+</body>
+</html>
+
+
+ 

@@ -1,0 +1,35 @@
+1)--Make Sure you have proper version of django and python is installed..
+
+2)---If not sure check Requirements.txt, (No need to install every script from that list just install required)
+
+3)--- Unzip the file
+
+4)--- navigate to the directory where manage.py is available (Src directory)
+
+5)--- Run python manage.py runserver
+
+6)--- application will be hosted on localhost/home
+
+7)--- once on the home page you can failry navigate the whole application
+
+8)---that's pretty much all you need....!!!!
+
+
+Enojoyed the question---
+Things completed----
+Login,signup,search based on title, pagination
+
+Things left---
+Filter option,editor's star icon
+
+
+///////////**********************************************
+
+DB used========== Sqlite3
+
+USername = zeus
+password = 1234zeus
+
+
+Note----I have left debug= true as it is not a production env.
+

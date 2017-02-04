@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="page-header">
+<div class="row">
+	  <h1>ALMA BASE <small style="color: orangered;">Games Listings</small></h1>
+	  <div style="float: right;">
+	  	<form method="GET"  action="" >
+	  	<input type="text" name='Q' placeholder="Search" value="{{request.get.Q}}" />
+	  	<input type="submit" class="btn-primary" value="Search" />   	
+	  </form>
+	  <h3>HEY...{{request.user.username}}</h3>
+	  <a class="btn btn-primary" href="{% url 'listings:logout' %}" >Log Out</a>
+	  </div>
+ </div>
+</div>
+
+<div class="col-sm-8">
+	{% for obj in game_list %}
+
+	<div class="row">
+	  <div class="col-sm-12">
+	    <div class="thumbnail">
+	        <div class="caption">
+	        <h3><i class="fa fa-steam-square"></i>
+	        {{obj.title}}  <small style="float: right;">{{obj.editors_choice}}</small></h3>
+	        <p>{{obj.platform}}</p>
+	        <hr>
+	        <p>Genre : {{obj.genre}}</p>
+	        <span><p style="text-align: right;">{{obj.score}}</p></span>
+	      </div>
+	    </div>
+	  </div>
+	  <hr>
+	</div>
+
+	{% endfor %}
+	<div class="pagination">
+	    <span class="step-links">
+	        {% if game_list.has_previous %}
+	            <a href="?page={{ game_list.previous_page_number }}">previous</a>
+	        {% endif %}
+
+	        <span class="current">
+	            Page {{ game_list.number }} of {{ game_list.paginator.num_pages }}.
+	        </span>
+
+	        {% if game_list.has_next %}
+	            <a href="?page={{ game_list.next_page_number }}">next</a>
+	        {% endif %}
+	    </span>
+	</div>
+
+</div>
+
+
+
+{% endblock content %}
+
